@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 const userService = require('./user-service.js');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
