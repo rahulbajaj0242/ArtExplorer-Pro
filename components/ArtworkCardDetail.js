@@ -4,13 +4,17 @@ import Card from 'react-bootstrap/Card';
 import { useAtom } from 'jotai';
 import { favouritesAtom } from '@/store';
 import { useState } from 'react';
+import { addToFavourites, removeFromFavourites } from '@/lib/userData';
+import { useEffect } from 'react';
 
 export default function ArtworkCardDetail(props) {
   const [faviouritesList, setFavouritesList] = useAtom(favouritesAtom);
 
-  const [showAdded, setShowAdded] = useState(
-    faviouritesList.includes(props.objectID) ? true : false
-  );
+  const [showAdded, setShowAdded] = useState(false);
+
+  useEffect(() => {
+    setShowAdded(faviouritesList?.includes(props.objectID));
+  }, [faviouritesList]);
 
   const { data, error } = useSWR(
     props.objectID
@@ -21,17 +25,15 @@ export default function ArtworkCardDetail(props) {
     return <Error statusCode={404} />;
   }
 
-  const favouritesClicked = () => {
+  async function favouritesClicked() {
     if (showAdded) {
-      setFavouritesList((current) =>
-        current.filter((fav) => fav != props.objectID)
-      );
+      setFavouritesList(await removeFromFavourites(props.objectID));
       setShowAdded(false);
     } else {
-      setFavouritesList((current) => [...current, props.objectID]);
+      setFavouritesList(await addToFavourites(props.objectID));
       setShowAdded(true);
     }
-  };
+  }
 
   return data ? (
     <Card>
