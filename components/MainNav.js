@@ -9,12 +9,14 @@ import { useAtom } from 'jotai';
 import { searchHistoryAtom } from '../store';
 import { set } from 'react-hook-form';
 import { addToHistory } from '@/lib/userData';
+import { readToken, removeToken } from '@/lib/authenticate';
 
 export default function MainNav() {
   const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
   const [search, setSearch] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter();
+  let token = readToken();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,6 +24,12 @@ export default function MainNav() {
     setSearchHistory(await addToHistory(`title=true&q=${search}`));
     setSearch('');
     router.push(`/artwork?title=true&q=${search}`);
+  }
+
+  function logout() {
+    setIsExpanded(false);
+    removeToken();
+    router.push('/login');
   }
 
   return (
@@ -48,64 +56,99 @@ export default function MainNav() {
                   Home
                 </Nav.Link>
               </Link>
-              <Link href="/search" passHref legacyBehavior>
-                <Nav.Link
-                  active={router.pathname === '/search'}
-                  onClick={() => setIsExpanded(false)}
+              {token && (
+                <Link href="/search" passHref legacyBehavior>
+                  <Nav.Link
+                    active={router.pathname === '/search'}
+                    onClick={() => setIsExpanded(false)}
+                  >
+                    Advanced
+                  </Nav.Link>
+                </Link>
+              )}
+            </Nav>
+            &nbsp;
+            {!token && (
+              <Nav>
+                <Link href="/register" passHref legacyBehavior>
+                  <Nav.Link
+                    active={router.pathname === '/register'}
+                    onClick={() => setIsExpanded(false)}
+                  >
+                    Register
+                  </Nav.Link>
+                </Link>
+                {
+                  <Link href="/login" passHref legacyBehavior>
+                    <Nav.Link
+                      active={router.pathname === '/login'}
+                      onClick={() => setIsExpanded(false)}
+                    >
+                      Login
+                    </Nav.Link>
+                  </Link>
+                }
+              </Nav>
+            )}
+            {token && (
+              <Form className="d-flex" onSubmit={handleSubmit}>
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
+                  value={search}
+                />
+                <Button
+                  type="submit"
+                  variant="outline-success"
+                  onClick={() => {
+                    setIsExpanded(false);
+                  }}
                 >
-                  Advanced
-                </Nav.Link>
-              </Link>
-            </Nav>
+                  Search
+                </Button>
+              </Form>
+            )}
             &nbsp;
-            <Form className="d-flex" onSubmit={handleSubmit}>
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-                onChange={(e) => {
-                  setSearch(e.target.value);
-                }}
-                value={search}
-              />
-              <Button
-                type="submit"
-                variant="outline-success"
-                onClick={() => {
-                  setIsExpanded(false);
-                }}
-              >
-                Search
-              </Button>
-            </Form>
-            &nbsp;
-            <Nav>
-              <NavDropdown title="Rahul Bajaj" id="basic-nav-dropdown">
-                <Link href="/favourites" passHref legacyBehavior>
+            {token && (
+              <Nav>
+                <NavDropdown title={token.userName} id="basic-nav-dropdown">
+                  <Link href="/favourites" passHref legacyBehavior>
+                    <NavDropdown.Item
+                      active={router.pathname === '/favourites'}
+                      href="/favourites"
+                      onClick={() => {
+                        setIsExpanded(false);
+                      }}
+                    >
+                      Favourites
+                    </NavDropdown.Item>
+                  </Link>
+                  <Link href="/history" passHref legacyBehavior>
+                    <NavDropdown.Item
+                      active={router.pathname === '/history'}
+                      href="/history"
+                      onClick={() => {
+                        setIsExpanded(false);
+                      }}
+                    >
+                      Search History
+                    </NavDropdown.Item>
+                  </Link>
                   <NavDropdown.Item
-                    active={router.pathname === '/favourites'}
-                    href="/favourites"
                     onClick={() => {
-                      setIsExpanded(false);
+                      logout();
                     }}
                   >
-                    Favourites
+                    Logout
                   </NavDropdown.Item>
-                </Link>
-                <Link href="/history" passHref legacyBehavior>
-                  <NavDropdown.Item
-                    active={router.pathname === '/history'}
-                    href="/history"
-                    onClick={() => {
-                      setIsExpanded(false);
-                    }}
-                  >
-                    Search History
-                  </NavDropdown.Item>
-                </Link>
-              </NavDropdown>
-            </Nav>
+                </NavDropdown>
+              </Nav>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
