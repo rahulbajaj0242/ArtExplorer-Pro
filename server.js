@@ -36,7 +36,7 @@ app.use(passport.initialize());
 
 app.use(express.json());
 app.use(cors());
-app.get('/', (req, res) => {
+app.get('/api/user', (req, res) => {
   res.json({ message: 'front page' });
 });
 app.post('/api/user/register', (req, res) => {
