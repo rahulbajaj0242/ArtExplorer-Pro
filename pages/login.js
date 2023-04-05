@@ -13,6 +13,7 @@ export default function Login(props) {
   const [warning, setWarning] = useState('');
   const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
   const [faviouritesList, setFavouritesList] = useAtom(favouritesAtom);
+  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault();
