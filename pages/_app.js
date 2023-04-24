@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '@/components/Layout';
 import { SWRConfig } from 'swr';
 import RouteGuard from '@/components/RouteGuard';
+import '@/styles/global.css';
 
 export default function App({ Component, pageProps }) {
   return (
