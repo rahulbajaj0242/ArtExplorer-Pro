@@ -41,7 +41,7 @@ export default function MainNav() {
         expanded={isExpanded}
       >
         <Container>
-          <Navbar.Brand>Rahul Bajaj</Navbar.Brand>
+          <Navbar.Brand>ArtExplorer Pro</Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             onClick={() => setIsExpanded(!isExpanded)}
