@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: '80vh',
+    margin: '0px',
   },
   form: {
     maxWidth: '400px',
