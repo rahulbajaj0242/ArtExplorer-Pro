@@ -19,13 +19,28 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: '#f2f2f2',
-    padding: theme.spacing(2),
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundImage:
+      'url("https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: '80vh',
-    margin: '0px',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      zIndex: -1,
+    },
   },
   form: {
     maxWidth: '400px',
@@ -101,8 +116,6 @@ export default function Login(props) {
 
   return (
     <>
-      <br />
-      <br />
       <div className={classes.root}>
         <Card variant="outlined" className={classes.form}>
           <Typography variant="h5" component="h2" className={classes.formTitle}>
@@ -158,15 +171,12 @@ export default function Login(props) {
             >
               Login
             </Button>
-          </form>
-          {warning && (
-            <>
-              <br />
+            {warning && (
               <Alert severity="error" className={classes.formAlert}>
                 {warning}
               </Alert>
-            </>
-          )}
+            )}
+          </form>
         </Card>
       </div>
     </>
