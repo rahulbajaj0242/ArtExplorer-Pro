@@ -91,85 +91,92 @@ export default function Register(props) {
   };
 
   return (
-    <div className={classes.root}>
-      <Card variant="outlined" className={classes.form}>
-        <Typography variant="h5" component="h2" className={classes.formTitle}>
-          Register
-        </Typography>
-        <Typography
-          color="textSecondary"
-          gutterBottom
-          className={classes.formText}
-        >
-          Enter your registration information below:
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <FormControl
-            fullWidth
-            margin="normal"
-            className={classes.formControl}
-          >
-            <InputLabel htmlFor="userName">User</InputLabel>
-            <Input
-              id="userName"
-              name="userName"
-              value={user}
-              onChange={(e) => setUser(e.target.value)}
-              autoFocus
-              required
-              autoComplete="username"
-              inputProps={{ 'aria-label': 'user name' }}
-            />
-          </FormControl>
-          <FormControl
-            fullWidth
-            margin="normal"
-            className={classes.formControl}
-          >
-            <InputLabel htmlFor="password">Password</InputLabel>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              autoComplete="new-password"
-              inputProps={{ 'aria-label': 'password' }}
-            />
-          </FormControl>
-          <FormControl
-            fullWidth
-            margin="normal"
-            className={classes.formControl}
-          >
-            <InputLabel htmlFor="confirmPassword">Confirm Password</InputLabel>
-            <Input
-              id="confirmPassword"
-              name="confirmPassword"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              autoComplete="new-password"
-              inputProps={{ 'aria-label': 'confirm password' }}
-            />
-          </FormControl>
-          {warning && (
-            <Alert severity="error" className={classes.formAlert}>
-              {warning}
-            </Alert>
-          )}
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            className={classes.formButton}
-          >
+    <>
+      <br />
+      <br />
+
+      <div className={classes.root}>
+        <Card variant="outlined" className={classes.form}>
+          <Typography variant="h5" component="h2" className={classes.formTitle}>
             Register
-          </Button>
-        </form>
-      </Card>
-    </div>
+          </Typography>
+          <Typography
+            color="textSecondary"
+            gutterBottom
+            className={classes.formText}
+          >
+            Enter your registration information below:
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <FormControl
+              fullWidth
+              margin="normal"
+              className={classes.formControl}
+            >
+              <InputLabel htmlFor="userName">User</InputLabel>
+              <Input
+                id="userName"
+                name="userName"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+                autoFocus
+                required
+                autoComplete="username"
+                inputProps={{ 'aria-label': 'user name' }}
+              />
+            </FormControl>
+            <FormControl
+              fullWidth
+              margin="normal"
+              className={classes.formControl}
+            >
+              <InputLabel htmlFor="password">Password</InputLabel>
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                autoComplete="new-password"
+                inputProps={{ 'aria-label': 'password' }}
+              />
+            </FormControl>
+            <FormControl
+              fullWidth
+              margin="normal"
+              className={classes.formControl}
+            >
+              <InputLabel htmlFor="confirmPassword">
+                Confirm Password
+              </InputLabel>
+              <Input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                autoComplete="new-password"
+                inputProps={{ 'aria-label': 'confirm password' }}
+              />
+            </FormControl>
+            {warning && (
+              <Alert severity="error" className={classes.formAlert}>
+                {warning}
+              </Alert>
+            )}
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.formButton}
+            >
+              Register
+            </Button>
+          </form>
+        </Card>
+      </div>
+    </>
   );
 }

@@ -100,71 +100,75 @@ export default function Login(props) {
   };
 
   return (
-    <div className={classes.root}>
-      <Card variant="outlined" className={classes.form}>
-        <Typography variant="h5" component="h2" className={classes.formTitle}>
-          Login
-        </Typography>
-        <Typography
-          color="textSecondary"
-          gutterBottom
-          className={classes.formText}
-        >
-          Enter your login information below:
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <FormControl
-            fullWidth
-            margin="normal"
-            className={classes.formControl}
-          >
-            <InputLabel htmlFor="userName">User</InputLabel>
-            <Input
-              id="userName"
-              name="userName"
-              value={user}
-              onChange={(e) => setUser(e.target.value)}
-              autoFocus
-              required
-              autoComplete="username"
-              inputProps={{ 'aria-label': 'user name' }}
-            />
-          </FormControl>
-          <FormControl
-            fullWidth
-            margin="normal"
-            className={classes.formControl}
-          >
-            <InputLabel htmlFor="password">Password</InputLabel>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              autoComplete="current-password"
-              inputProps={{ 'aria-label': 'password' }}
-            />
-          </FormControl>
-          <Button
-            variant="contained"
-            color="primary"
-            type="submit"
-            className={classes.formButton}
-          >
+    <>
+      <br />
+      <br />
+      <div className={classes.root}>
+        <Card variant="outlined" className={classes.form}>
+          <Typography variant="h5" component="h2" className={classes.formTitle}>
             Login
-          </Button>
-        </form>
-        {warning && (
-          <>
-            <br />
-            <Alert severity="error" className={classes.formAlert}>
-              {warning}
-            </Alert>
-          </>
-        )}
-      </Card>
-    </div>
+          </Typography>
+          <Typography
+            color="textSecondary"
+            gutterBottom
+            className={classes.formText}
+          >
+            Enter your login information below:
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <FormControl
+              fullWidth
+              margin="normal"
+              className={classes.formControl}
+            >
+              <InputLabel htmlFor="userName">User</InputLabel>
+              <Input
+                id="userName"
+                name="userName"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+                autoFocus
+                required
+                autoComplete="username"
+                inputProps={{ 'aria-label': 'user name' }}
+              />
+            </FormControl>
+            <FormControl
+              fullWidth
+              margin="normal"
+              className={classes.formControl}
+            >
+              <InputLabel htmlFor="password">Password</InputLabel>
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                autoComplete="current-password"
+                inputProps={{ 'aria-label': 'password' }}
+              />
+            </FormControl>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              className={classes.formButton}
+            >
+              Login
+            </Button>
+          </form>
+          {warning && (
+            <>
+              <br />
+              <Alert severity="error" className={classes.formAlert}>
+                {warning}
+              </Alert>
+            </>
+          )}
+        </Card>
+      </div>
+    </>
   );
 }

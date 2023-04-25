@@ -29,6 +29,7 @@ export default function History() {
 
   return (
     <>
+      <br />
       {parsedHistory.length == 0 ? (
         <>
           <Card>
@@ -39,7 +40,7 @@ export default function History() {
           </Card>
         </>
       ) : (
-        <ListGroup>
+        <ListGroup className="history">
           {parsedHistory.map((historyItem, index) => {
             return (
               <ListGroup.Item

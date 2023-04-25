@@ -41,6 +41,8 @@ export default function AdvancedSearch() {
 
   return (
     <>
+      <br />
+      <br />
       <Form onSubmit={handleSubmit(submitForm)}>
         <Row>
           <Col>
