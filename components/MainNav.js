@@ -35,8 +35,7 @@ export default function MainNav() {
   return (
     <>
       <Navbar
-        bg="light"
-        className="fixed-top"
+        className="fixed-top navbar-dark bg-dark"
         expand="lg"
         expanded={isExpanded}
       >
