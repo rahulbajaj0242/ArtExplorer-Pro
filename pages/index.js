@@ -4,22 +4,29 @@ import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    position: 'relative' /* add this to make the pseudo-element work */,
+    position: 'relative',
     width: '100vw',
-    backgroundImage: `url(https://images.unsplash.com/photo-1572953109213-3be62398eb95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)`,
+    backgroundImage: `url(https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80)`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: 'calc(100vh)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#f5f5f5' /* a lighter shade of white */,
+    color: '#f5f5f5',
     padding: theme.spacing(4),
     borderRadius: '8px',
+    zIndex: '-1',
     boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
-    // [theme.breakpoints.down('sm')]: {
-    //   height: '50vh',
-    // },
+    '&::before': {
+      /* add the pseudo-element */ content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)' /* black with 50% opacity */,
+    },
   },
 
   title: {
@@ -49,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.primary.dark,
     },
   },
+  textWrapper: {
+    zIndex: '2',
+  },
 }));
 
 export default function Home() {
@@ -57,7 +67,7 @@ export default function Home() {
   return (
     <>
       <div className={classes.hero}>
-        <Container maxWidth="md">
+        <Container maxWidth="md" className={classes.textWrapper}>
           <Typography variant="h1" component="h1" className={classes.title}>
             Discover Artworks and Artifacts from Around the World
           </Typography>
