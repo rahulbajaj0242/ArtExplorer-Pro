@@ -9,9 +9,8 @@ import {
   Button,
   Typography,
   Alert,
-} from '@mui/material';
-
-import { makeStyles } from '@mui/styles';
+  makeStyles,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
