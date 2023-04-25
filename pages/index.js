@@ -4,19 +4,22 @@ import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    position: 'relative' /* add this to make the pseudo-element work */,
+    // position: 'relative' /* add this to make the pseudo-element work */,
+    width: '100%',
     backgroundImage: `url(https://images.unsplash.com/photo-1572953109213-3be62398eb95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    height: 'calc(100vh - 64px)',
+    height: 'calc(100vh)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: '#f5f5f5' /* a lighter shade of white */,
     padding: theme.spacing(4),
-    [theme.breakpoints.down('sm')]: {
-      height: '50vh',
-    },
+    borderRadius: '8px',
+    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
+    // [theme.breakpoints.down('sm')]: {
+    //   height: '50vh',
+    // },
   },
 
   title: {
