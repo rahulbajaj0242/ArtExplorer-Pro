@@ -62,7 +62,7 @@ export default function MainNav() {
                     active={router.pathname === '/search'}
                     onClick={() => setIsExpanded(false)}
                   >
-                    Advanced
+                    Advanced Search
                   </Nav.Link>
                 </Link>
               )}
