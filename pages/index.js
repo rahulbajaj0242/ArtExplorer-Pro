@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
       left: 0,
       width: '100%',
       height: '100%',
+      zIndex: '-1',
       backgroundColor: 'rgba(0, 0, 0, 0.5)' /* black with 50% opacity */,
     },
   },
@@ -55,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: theme.palette.primary.dark,
     },
+    zIndex: '2',
   },
   textWrapper: {
     zIndex: '2',

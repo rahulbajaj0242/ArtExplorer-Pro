@@ -49,18 +49,21 @@ const useStyles = makeStyles((theme) => ({
     padding: '32px',
     borderRadius: '8px',
     boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
+    background: 'linear-gradient(to bottom, #f5f5f5, #dcdcdc)',
   },
   formTitle: {
     marginBottom: '16px',
     fontWeight: 'bold',
     fontSize: '24px',
     textAlign: 'center',
+    color: '#333',
   },
   formText: {
     marginBottom: '16px',
     fontWeight: 'normal',
     fontSize: '16px',
     textAlign: 'center',
+    color: '#666',
   },
   formControl: {
     marginBottom: theme.spacing(2),
@@ -83,6 +86,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '16px',
     fontWeight: 'bold',
     textTransform: 'none',
+    background: '#0070f3',
+    color: '#fff',
+    '&:hover': {
+      background: '#005cb2',
+    },
   },
   formAlert: {
     marginTop: '16px',
