@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   hero: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#f5f5f5',
     padding: theme.spacing(4),
     borderRadius: '8px',
-    zIndex: '-1',
+    zIndex: '1',
     boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
     '&::before': {
       /* add the pseudo-element */ content: '""',
@@ -65,6 +66,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
+  const router = useRouter();
+  const handleButtonClick = () => {
+    router.push('/search');
+    console.log('Button clicked!');
+  };
 
   return (
     <>
@@ -80,7 +86,7 @@ export default function Home() {
             variant="contained"
             color="primary"
             className={classes.button}
-            href="/search"
+            onClick={handleButtonClick}
           >
             Search Now
           </Button>
