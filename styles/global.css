@@ -46,8 +46,63 @@ body {
 
 .pagination {
   padding-left: 3em;
+  margin-top: 1em;
 }
 
 .history {
   padding-left: 3em;
+}
+
+@media screen and (max-width: 768px) {
+  .fixed-top {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .search-form {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .pagination {
+    padding-left: 1.5em;
+    margin-top: 1em;
+  }
+
+  .history {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .card {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+  .login-card {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+  .register-card {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fixed-top {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .search-form {
+    padding-left: 1em;
+  }
+  .pagination {
+    padding-left: 1em;
+    margin-top: 1em;
+  }
+
+  .history {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .card {
+    margin-left: 1em;
+  }
 }

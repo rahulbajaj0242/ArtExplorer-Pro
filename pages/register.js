@@ -122,7 +122,7 @@ export default function Register(props) {
       <br />
 
       <div className={classes.root}>
-        <Card variant="outlined" className={classes.form}>
+        <Card variant="outlined" className={`${classes.form} register-card`}>
           <Typography variant="h5" component="h2" className={classes.formTitle}>
             Register
           </Typography>

@@ -125,7 +125,7 @@ export default function Login(props) {
   return (
     <>
       <div className={classes.root}>
-        <Card variant="outlined" className={classes.form}>
+        <Card variant="outlined" className={`${classes.form} login-card`}>
           <Typography variant="h5" component="h2" className={classes.formTitle}>
             Login
           </Typography>
@@ -136,7 +136,7 @@ export default function Login(props) {
           >
             Enter your login information below:
           </Typography>
-          <form onSubmit={handleSubmit}>
+          <form className="login-form" onSubmit={handleSubmit}>
             <FormControl
               fullWidth
               margin="normal"
