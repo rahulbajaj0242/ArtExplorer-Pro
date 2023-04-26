@@ -20,6 +20,7 @@ export default function Favourites() {
           ))
         ) : (
           <>
+            <br />
             <Card>
               <br />
               <h5>Nothing Here.</h5>

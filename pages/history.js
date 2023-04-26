@@ -35,7 +35,7 @@ export default function History() {
           <Card>
             <br />
             <h5>Nothing Here.</h5>
-            <h5>Try adding some new artwork to the list.</h5>
+            <h5>Try searching something new.</h5>
             <br />
           </Card>
         </>
