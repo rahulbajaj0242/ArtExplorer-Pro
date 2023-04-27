@@ -80,12 +80,12 @@ export default function Home() {
             Discover Artworks and Artifacts from Around the World
           </Typography>
           <Typography variant="h4" component="h2" className={classes.subtitle}>
-            Search by location, time period, and characteristics
+            Search by location, artist, and characteristics
           </Typography>
           <Button
             variant="contained"
             color="primary"
-            className={classes.button}
+            className={`${classes.button} search_button`}
             onClick={handleButtonClick}
           >
             Search Now
