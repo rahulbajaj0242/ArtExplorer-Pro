@@ -103,6 +103,7 @@ export default function MainNav() {
                 />
                 <Button
                   type="submit"
+                  className={`quick-search-button`}
                   variant="outline-success"
                   onClick={() => {
                     setIsExpanded(false);

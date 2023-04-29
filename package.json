@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -41,5 +42,8 @@
     "react-tinder-card": "^1.6.2",
     "styled-components": "^5.3.10",
     "swr": "^2.0.4"
+  },
+  "devDependencies": {
+    "cypress": "^12.11.0"
   }
 }
