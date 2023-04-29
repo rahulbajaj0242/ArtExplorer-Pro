@@ -85,7 +85,7 @@ export default function Home() {
           <Button
             variant="contained"
             color="primary"
-            className={`${classes.button} search_button`}
+            className={`${classes.button} search-button`}
             onClick={handleButtonClick}
           >
             Search Now
