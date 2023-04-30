@@ -1,4 +1,4 @@
-const website_url = 'https://museum-app-sandy.vercel.app/';
+const website_url = 'https://artexplorer-pro.vercel.app/';
 
 // Test cases for search home button
 describe('Search home button', () => {
