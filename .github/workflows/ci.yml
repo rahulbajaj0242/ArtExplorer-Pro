@@ -21,4 +21,4 @@ jobs:
           build: npm run build
           start: npm start
           install: |
-            /usr/local/bin/npm ci --legacy-peers-deps
+            /usr/local/bin/npm ci --legacy-peer-deps ${{ '--' if runner.os == 'Windows' else '' }}
