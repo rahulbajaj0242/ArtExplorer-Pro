@@ -20,5 +20,4 @@ jobs:
         with:
           build: npm run build
           start: npm start
-          install: |
-            /usr/local/bin/npm ci --legacy-peer-deps${{ ' --no-audit'}}
+          install: false
