@@ -1,6 +1,6 @@
 # ArtExplorer Pro
 
-ArtExplorer Pro is a web application that allows users to search for artworks and artifacts based on location, artist, and characteristics. The application is built using Next.js, Material UI, React Bootstrap, and Cypress.
+ArtExplorer Pro is a web application that allows users to search for artworks and artifacts based on location, artist, and characteristics. The application is built using React, Next.js, MongoDB, Material UI, and React Bootstrap.
 
 ## Features
 
@@ -8,6 +8,18 @@ ArtExplorer Pro is a web application that allows users to search for artworks an
 - View detailed information about each artwork or artifact
 - Save favorite artworks and artifacts for later viewing
 - View past search history
+
+## Technologies Used
+
+ArtExplorer Pro was built using the following technologies:
+
+- **React**: Used to build the user interface of the application.
+- **Next.js**: Used to create server-side rendered pages and handle routing.
+- **MongoDB**: Used to store user data such as registration, login, favorites, and search history.
+- **Material UI**: Used to create the UI components and design of the application.
+- **React Bootstrap**: Used to create additional UI components and design of the application.
+- **Cypress**: Used to create end-to-end tests to ensure the application is functioning as expected.
+- **GitHub Actions**: Used to create a CI/CD pipeline to automate the deployment process.
 
 ## Getting Started
 
@@ -24,10 +36,13 @@ Alternatively, you can visit the public website at [artexplorer-pro.vercel.app](
 
 Here are some screenshots of ArtExplorer Pro in action:
 
-![Homepage](//images/home-page-image.png)
-![Register](//images/register.png)
-![Search Results](//images/search.png)
-![Artwork Details](//images/faviourates.png)
+![Homepage](/images/home-page-image.png)
+
+![Register](/images/register.png)
+
+![Search Results](/images/search.png)
+
+![Artwork Details](/images/faviourates.png)
 
 ## Contributing
 
